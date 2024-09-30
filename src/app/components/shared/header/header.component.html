@@ -1,0 +1,16 @@
+<mat-toolbar>
+    <span class="app-title-content">
+    <button mat-mini-fab (click)="toggleSidebar.emit()" color="tertiary">
+        <mat-icon aria-hidden="false" aria-label="Menu" fontIcon="menu"></mat-icon>    </button>
+    <span class="app-title">Admin Panel</span>
+    </span>
+    <span class="spacer">
+        
+    </span>
+    <button mat-mini-fab aria-label="Theme" (click)="toggleTheme()">
+        <mat-icon>{{ !isDarkTheme ? 'light_mode' : 'dark_mode' }}</mat-icon>
+      </button>
+    <button mat-mini-fab aria-label="Logout" color="error" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>

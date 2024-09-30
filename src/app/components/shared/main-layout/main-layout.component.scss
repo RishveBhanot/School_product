@@ -1,0 +1,27 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+mat-sidenav-container {
+  flex: 1 1 auto;
+}
+
+mat-sidenav {
+  transition: width 0.3s ease-in-out;
+  border-radius: 0 !important;
+}
+
+mat-sidenav.expanded {
+  width: 200px;
+}
+
+mat-sidenav:not(.expanded) {
+  width: 62px;
+}
+
+
+mat-sidenav-content {
+  transition: margin-left 0.3s ease-in-out;
+}

@@ -1,0 +1,13 @@
+<div class="layout-container">
+  <app-header (toggleSidebar)="toggleSidebar()"></app-header>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav [mode]="sidenavMode()" [opened]="true" [class.expanded]="sidenavExpanded()">
+      <app-sidebar [expanded]="sidenavExpanded()" (toggleSidebar)="toggleSidebar($event)"></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content [style.margin-left.px]="sidenavMode() === 'side' ? (sidenavExpanded() ? 200 : 62) : 0">
+      <div class="content-container">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,37 @@
+<mat-nav-list disableRipple="true">
+  @for (item of menuItems; track item) {
+  <ng-container>
+    @if(!item?.children){
+    <a mat-list-item [routerLink]="item.route" (click)="navigate(item.route)" disableRipple="true">
+      <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+      @if(expanded){
+      <span matListItemTitle>{{item.label}}</span>
+      }
+    </a>
+    }
+    @if(item?.children){
+    <mat-expansion-panel [expanded]="false" [hideToggle]="!expanded" (expandedChange)="toggleMenu(item.label, $event)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>{{item.icon}}</mat-icon>
+          @if(expanded){
+          <span class="list-item">{{item.label}}</span>
+          }
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-nav-list>
+        @for (child of item?.children; track child){
+        <a mat-list-item [routerLink]="child.route">
+          <mat-icon matListItemIcon>{{child.icon}}</mat-icon>
+          @if(expanded){
+          <span matListItemTitle>{{child.label}}</span>
+          }
+        </a>
+        }
+      </mat-nav-list>
+    </mat-expansion-panel>
+    }
+  </ng-container>
+  }
+</mat-nav-list>

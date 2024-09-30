@@ -1,0 +1,139 @@
+// Updated Material Design color palettes for a cool, modern look
+
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+$_palettes: (
+  primary: (
+    0: #000000,
+    10: #001524,
+    20: #002a48,
+    25: #003560,
+    30: #00417b,
+    35: #004d97,
+    40: #0059b3,
+    50: #0072cc,
+    60: #008ae6,
+    70: #00a3ff,
+    80: #33b8ff,
+    90: #66ccff,
+    95: #b3e5ff,
+    98: #e6f4ff,
+    99: #f5fbff,
+    100: #ffffff,
+  ),
+  secondary: (
+    0: #000000,
+    10: #142300,
+    20: #2a4500,
+    25: #336000,
+    30: #407b00,
+    35: #509600,
+    40: #61b000,
+    50: #82c700,
+    60: #a3df00,
+    70: #c4f600,
+    80: #d6ff33,
+    90: #e8ff66,
+    95: #f2ffb3,
+    98: #faffe6,
+    99: #fbfff5,
+    100: #ffffff,
+  ),
+  tertiary: (
+    0: #000000,
+    10: #260033,
+    20: #4b0066,
+    25: #600080,
+    30: #7b0099,
+    35: #9600b3,
+    40: #b300cc,
+    50: #cc00e6,
+    60: #e600ff,
+    70: #f033ff,
+    80: #f666ff,
+    90: #f9b3ff,
+    95: #fde6ff,
+    98: #fef4ff,
+    99: #fefaff,
+    100: #ffffff,
+  ),
+  neutral: (
+    0: #000000,
+    10: #1a1a1a,
+    20: #333333,
+    25: #404040,
+    30: #4d4d4d,
+    35: #595959,
+    40: #666666,
+    50: #808080,
+    60: #999999,
+    70: #b3b3b3,
+    80: #cccccc,
+    90: #e6e6e6,
+    95: #f2f2f2,
+    98: #fafafa,
+    99: #fdfdfd,
+    100: #ffffff,
+  ),
+  neutral-variant: (
+    0: #000000,
+    10: #1e1e2d,
+    20: #3c3c58,
+    25: #4a4a6b,
+    30: #59597d,
+    35: #68688f,
+    40: #7878a1,
+    50: #9999c4,
+    60: #b9b9e6,
+    70: #d9d9ff,
+    80: #ececff,
+    90: #f4f4ff,
+    95: #f9f9ff,
+    98: #fcfcff,
+    99: #fefeff,
+    100: #ffffff,
+  ),
+  error: (
+    0: #000000,
+    10: #330000,
+    20: #660000,
+    25: #800000,
+    30: #990000,
+    35: #b30000,
+    40: #cc0000,
+    50: #ff0000,
+    60: #ff3333,
+    70: #ff6666,
+    80: #ff9999,
+    90: #ffcccc,
+    95: #ffe6e6,
+    98: #fff4f4,
+    99: #fffbfb,
+    100: #ffffff,
+  ),
+);
+
+$_rest: (
+  secondary: map.get($_palettes, secondary),
+  neutral: map.get($_palettes, neutral),
+  neutral-variant: map.get($_palettes,  neutral-variant),
+  error: map.get($_palettes, error),
+);
+$_primary: map.merge(map.get($_palettes, primary), $_rest);
+$_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
+
+$light-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: $_primary,
+    tertiary: $_tertiary,
+  )
+));
+$dark-theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: $_primary,
+    tertiary: $_tertiary,
+  )
+));

@@ -1,0 +1,27 @@
+mat-nav-list {
+  border-radius: 0 !important;
+   a {
+    margin: 2px 0px;
+  }
+}
+
+mat-expansion-panel {
+  box-shadow: none !important;
+  border-radius: 40px !important;
+}
+
+mat-expansion-panel-header {
+  padding: 0 16px;
+}
+
+.mat-expansion-panel-body {
+  padding: 0;
+}
+
+a[mat-list-item] {
+  height: 48px;
+}
+
+.list-item {
+  margin-left: 16px;
+}

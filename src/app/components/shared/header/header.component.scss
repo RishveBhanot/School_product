@@ -1,0 +1,28 @@
+mat-toolbar {
+    display: flex;
+    align-items: center;
+    padding: 0px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    .app-title-content{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 0px 12px;
+    }
+  }
+  
+  .mat-toolbar button {
+    margin-right: 16px;
+  }
+  
+  .app-title {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
